@@ -11,4 +11,4 @@ weight = float(input())
 heightsquared = height*height
 #bmi weight divided by height squared
 bmi = weight/heightsquared
-print (name + "you are" + age "old and your bmi is" + bmi)
+print (name + "you are" + age + "old and your bmi is" + bmi)
