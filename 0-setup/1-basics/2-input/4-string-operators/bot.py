@@ -1,8 +1,8 @@
 # Health meter
 # Define characters
-lives_chr = "H"
-energy_chr = "E"
-shield_chr = "S"
+lives_chr = "♥"
+energy_chr = "♦"
+shield_chr = "♦"
 # Input values
 print("Please enter the number of lives.")
 lives = int(input())
