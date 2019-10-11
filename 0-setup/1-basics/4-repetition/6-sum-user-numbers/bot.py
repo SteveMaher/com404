@@ -8,7 +8,7 @@ total = 0
 # While Loop
 
 while counting <= howmany:
-    num = int(input("Please enter number " + str(counting) + "of " + str(howmany) + ":"))
+    num = int(input("\n Please enter number " + str(counting) + " of " + str(howmany) + ": "))
     counting = counting + 1
     total = total + num
-print ("The answer is" + str(total))
+print ("\n The answer is " + str(total))
