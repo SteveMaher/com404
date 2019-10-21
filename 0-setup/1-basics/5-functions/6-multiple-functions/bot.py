@@ -1,13 +1,15 @@
 # Code to demonstrate the implementation of multiple user defined functions
 
-def display_box(name):
-  print("*" * (len(name) + 10))
-  print("* Hello", name, "*")
-  print("*" * (len(name) + 10))
+def display_ladder(steps):
+    for count in range(0,steps,1):
+        print("***")
+        print("| |")
+    
+
+def create_ladder():
+  print("How many steps remain?")
+  steps = int(input())
+  print()
+  display_ladder(steps)
   
-def greet_user():
-  print("Please enter your name")
-  name = input()
-  display_box(name)
-  
-greet_user()
+create_ladder()
