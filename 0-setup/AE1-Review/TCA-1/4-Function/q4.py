@@ -1,9 +1,10 @@
 # Function
 
 def item_from_suitcase(item):
-    item = ('I wonder what is in my suitcase...\n'))
+    print('I wonder what is in my suitcase...')
+
     if item == 'toothbrush':
-        print('Well, got to have clean teeth.')
+        print('A toothbrush. Well, got to have clean teeth.')
     
     elif item == 'spidey suit':
         print('My Spidey suit! I wont be needing this. I am on holiday.')
@@ -16,7 +17,6 @@ def item_from_suitcase(item):
 item_from_suitcase('toothbrush')
 item_from_suitcase('belt')
 item_from_suitcase('spidey suit')
-
 
 
 
