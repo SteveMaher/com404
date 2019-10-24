@@ -15,7 +15,7 @@ def  decide_plan(hero1, hero2):
 
 def run():
     hero1 = input('Please enter the name of your 1st Superhero\n')
-    hero1 = input('Please enter the name of you 2nd Superhero\n')
+    hero2 = input('Please enter the name of you 2nd Superhero\n')
     question = input('Please choose league or plan\n')
     if question == 'league':
         is_league_united()
