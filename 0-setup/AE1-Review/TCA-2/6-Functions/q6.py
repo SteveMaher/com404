@@ -17,10 +17,10 @@ def run():
     hero1 = input('Please enter the name of your 1st Superhero\n')
     hero2 = input('Please enter the name of you 2nd Superhero\n')
     question = input('Please choose league or plan\n')
-    if question == 'league':
-        is_league_united()
-    elif question == 'plan':
-        answer = decide_plan()
+    if (question == 'league'):
+        print(is_league_united(hero1, hero2))
+    elif (question == 'plan'):
+        print(decide_plan(hero1, hero2))
     else:
         print('Invalid command. Pleas try again')
 
