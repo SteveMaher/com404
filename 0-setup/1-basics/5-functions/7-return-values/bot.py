@@ -17,9 +17,9 @@ def run():
     bop = int(input('What is the weight of Bop?\n'))
     question = input('What would you like to calculate (sum or average)?\n')
     if question == 'sum':
-        sum_weights()
+        sum_weights(beep, bop)
     elif question == 'average':
-        calc_avg_weight()
+        calc_avg_weight(beep, bop)
     else:
         print('Invalid entry, I can only sum or average. Please try again')
 
