@@ -27,7 +27,7 @@ class Bot:
         print("Shield:", total_sh * "#")
 
     def __str__(self):
-        return ("\nName is: {} Age is: {} Energy is: {} Shield is: {}".format(self.name, self.age, self.energy, self.shield))
+        return ("\nName is: {} Age is: {} Energy is: {} Shield is: {} Super Power Level is {}  Hover Distance is {} ".format(self.name, self.age, self.energy, self.shield, self.super_power_level, self.hover_distance))
 
 
 Bop = Bot()
@@ -35,15 +35,3 @@ Bop.display_name()
 Bop.display_energy()
 Bop.display_shield()
 print (Bop.__str__())
-
-
-
-
-
-
-
-
-
-
-
-
