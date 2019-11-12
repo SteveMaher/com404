@@ -12,6 +12,8 @@ class Gui(Tk):
         
         # add window components by
         # ...creating an object of the component stored in an attribute
+
+        self.add_background()
         self.add_heading_label()
         self.add_newsletter_label()
         self.add_emailtext_label()
@@ -19,6 +21,11 @@ class Gui(Tk):
         self.add_subscribe_button()
 
 
+
+    def add_background(self):
+        self.background = Canvas(width=400)
+        self.background.place(x=0, y=0)
+        self.background.configure(bg="#e0eeee")
 
     def add_heading_label(self):
         # create
@@ -48,17 +55,12 @@ class Gui(Tk):
         # ...setting the attributes of the component using the attribute
         self.email_entry.configure(font="Arial 11")
 
-# button
-
     def add_subscribe_button(self):
         # create
         self.subscribe = Button(width=45)
         self.subscribe.place(x=20, y=270)
         # ...setting the attributes of the component using the attribute
-        self.subscribe.configure(font="Arial 11", text="Subscribe")
-
-
-
+        self.subscribe.configure(bg="#ffb6c1", font="Arial 11", text="Subscribe")
 
 
 
