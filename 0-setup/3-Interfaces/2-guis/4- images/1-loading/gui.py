@@ -10,7 +10,6 @@ class Gui(Tk):
         self.bike_image = PhotoImage(file="//pclures04\home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/1-loading/bike.gif")
         self.plane_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/1-loading/plane.gif")
 
-
         # set window attributes
         self.title("Gui")
 
@@ -53,4 +52,4 @@ class Gui(Tk):
 # Create an object of the Gui class when this module is executed
 if (__name__ == "__main__"):
     gui = Gui()
-    gui.mainloop()	
+    gui.mainloop()
