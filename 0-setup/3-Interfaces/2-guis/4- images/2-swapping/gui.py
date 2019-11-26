@@ -15,7 +15,6 @@ class Gui(Tk):
         # add components
         self.add_outer_frame()
         self.add_plant_image_label()
-        self.add_plant_name_image_label()
         self.add_heading_label()
         self.add_flip_button()
 
@@ -37,10 +36,6 @@ class Gui(Tk):
         self.plant_image_label.grid(row=1, column=0)
         self.plant_image_label.configure(image=self.plant_image, height=300, width=300)
 
-    def add_plant_name_image_label(self):
-        self.plant_name_image_label = Label(self.outer_frame)
-        self.plant_name_image_label.grid(row=1, column=0)
-        self.plant_name_image_label.configure(image=self.plant_name_image, height=300, width=300)
  
     # Button
     def add_flip_button(self):
@@ -53,14 +48,10 @@ class Gui(Tk):
 
     # display either picture
     def __flip_button_clicked_left(self, event):
-        self.plant_image_label = Label(self.outer_frame)
-        self.plant_image_label.grid(row=1, column=0)
-        self.plant_image_label.configure(image=self.plant_image, height=300, width=300)
+        self.plant_image_label.configure(image=self.plant_image)
 
     def __flip_button_clicked_right(self, event):
-        self.plant_name_image_label = Label(self.outer_frame)
-        self.plant_name_image_label.grid(row=1, column=0)
-        self.plant_name_image_label.configure(image=self.plant_name_image, height=300, width=300)
+        self.plant_image_label.configure(image=self.plant_name_image)
 
 # Create an object of the Gui class when this module is executed
 if (__name__ == "__main__"):
