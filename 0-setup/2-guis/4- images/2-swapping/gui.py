@@ -6,8 +6,14 @@ class Gui(Tk):
         super().__init__()
 
         # load resources
+        # self.plant_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/2-swapping/plant_image.gif")
+        # self.plant_name_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/2-swapping/plant_name_image.gif")
+
         self.plant_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/2-swapping/plant_image.gif")
         self.plant_name_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/2-swapping/plant_name_image.gif")
+
+
+
 
         # set window attributes
         self.title("Gui")

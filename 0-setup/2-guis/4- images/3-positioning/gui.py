@@ -1,59 +1,58 @@
+# GUI interface
 from tkinter import *
 from tkinter import messagebox
 
 class Gui(Tk):
-    
+# initialise window
     def __init__(self):
         super().__init__()
 
-        # load resources
-        self.bus_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/bus_image.gif")
-        self.map_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/map_image.gif")
+# load resources
+        #self.bus_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/bus_image.gif")
+        #self.map_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/map_image.gif")
 
-        # set window attributes
-        self.title("Gui")
+        self.bus_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata\/ocuments/MaherS/Documents/GitHub/com404/0-setup/2-guis/4- images/3-positioning/bus_image.gif")
+        self.map_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata\/ocuments/MaherS/Documents/GitHub/com404/0-setup/2-guis/4- images/3-positioning/map_image.gif")
 
-        # add components
-        self.add_outer_frame()
-        self.add_bus_image_label()
-        self.add_map_label()
-        #self.add_flip_button()
+# set window attributes
+        self.title("Travel")
+        self.configure(bg="#ccc")
 
-        # Outer Frame
-    def add_outer_frame(self):
-        self.outer_frame = Frame()
-        self.outer_frame.grid(row=0, column=0)
-        self.outer_frame.configure(bg="#eee", padx=10, pady=10)
+# add components
+        self.__add_outer_frame()
+        self.__add_heading_label()
+        self.__add_map_frame()
+        self.__add_map_image_label()
+        self.__add_bus_image_label()
 
-    # Label going in the outer frame Grid
-    def add_heading_label(self):
-        self.heading_label = Label(self.outer_frame)
-        self.heading_label.grid(row=0, column=0, columnspan=3)
-        self.heading_label.configure(bg="#eee", font="Arial 15", text="Bus Journey")
+def __add_outer_frame(self):
+    self.outer_frame = Frame()
+    self.outer_frame.grid(row=0, column=0)
+  
+# Heading function
+def __add_heading_label(self):
+    self.heading_label = Label(self.outer_frame)
+    self.heading_label.grid(row=0, column=0)
+    self.heading_label.configure(font="Arial 16", text="Bus Journey")
 
-    # Images    
-    #def add_plant_image_label(self):
-        #self.plant_image_label = Label(self.outer_frame)
-        #self.plant_image_label.grid(row=1, column=0)
-        #self.plant_image_label.configure(image=self.plant_image, height=300, width=300)
+# Frame function
+def __add_map_frame(self):
+    self.map_frame = Frame(self.outer_frame)
+    self.map_frame.grid(row=1, column=0)
+    self.map_frame.configure(bg="#eee", width=800, height=600)
 
-    # Button
-    #def add_flip_button(self):
-        #self.flip_button = Button(self.outer_frame)
-        #self.flip_button.grid(row=2, column=0)
-        #self.flip_button.configure(bg="#ffc", font="Arial 12", text="Flip")
-    # Events
-        #self.flip_button.bind("<ButtonRelease-1>", self.__flip_button_clicked_left)
-        #self.flip_button.bind("<ButtonRelease-3>", self.__flip_button_clicked_right)
+def __add_map_image_label(self):
+    self.map_image_label = Label(self.map_frame)
+    self.map_image_label.place(x=0, y=0)
+    self.map_image_label.configure(image=self.map_image)
 
-    # display either picture
-    #def __flip_button_clicked_left(self, event):
-        #self.plant_image_label.configure(image=self.plant_image)
+def __add_bus_image_label(self):
+    self.bus_image_label = Label(self.map_frame)
+    self.bus_image_label.place(x=20, y=20)
+    self.bus_image_label.configure(image=self.bus_image)
+    self.bus_image_label.bind("<B1-Motion>", self.__bus_move)
 
-    #def __flip_button_clicked_right(self, event):
-        #self.plant_image_label.configure(image=self.plant_name_image)
-
-# Create an object of the Gui class when this module is executed
-if (__name__ == "__main__"):
-    gui = Gui()
-    gui.mainloop()
+def __bus_move(self, event):
+    messagebox.showinfo("Bus Journey Gui", "Mouse x is " + str(event.x))
+    messagebox.showinfo("Bus Journey Gui", "Mouse y is " + str(event.y))
+    #self.bus_image_label.place(x=event.x, y=event.y)
