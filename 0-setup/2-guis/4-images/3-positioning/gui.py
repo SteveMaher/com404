@@ -8,11 +8,10 @@ class Gui(Tk):
         super().__init__()
 
 # load resources
-        #self.bus_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/bus_image.gif")
-        #self.map_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/map_image.gif")
-
-        self.bus_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata\/ocuments/MaherS/Documents/GitHub/com404/0-setup/2-guis/4- images/3-positioning/bus_image.gif")
-        self.map_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata\/ocuments/MaherS/Documents/GitHub/com404/0-setup/2-guis/4- images/3-positioning/map_image.gif")
+        self.bus_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata\/ocuments/MaherS/Documents/GitHub/com404/0-setup/2-guis/4-images/3-positioning/bus_image.gif")
+        self.map_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata\/ocuments/MaherS/Documents/GitHub/com404/0-setup/2-guis/4-images/3-positioning/map_image.gif")
+# self.bus_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/bus_image.gif")
+# self.map_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/3-positioning/map_image.gif")
 
 # set window attributes
         self.title("Travel")
