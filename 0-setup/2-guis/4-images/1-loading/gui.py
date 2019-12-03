@@ -6,13 +6,12 @@ class Gui(Tk):
         super().__init__()
 
         # load resources
-        self.ambulance_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/1-loading/ambulance.gif")
-        self.bike_image = PhotoImage(file="//pclures04\home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/1-loading/bike.gif")
-        self.plane_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4- images/1-loading/plane.gif")
+        self.ambulance_image = PhotoImage(file="U:/Documents/Problem Solving Programming/com404/0-setup/2-guis/4-images/1-loading/ambulance.gif")
+        self.bike_image = PhotoImage(file="U:/Documents/Problem Solving Programming/com404/0-setup/2-guis/4-images/1-loading/bike.gif")
+        self.plane_image = PhotoImage(file="U:/Documents/Problem Solving Programming/com404/0-setup/2-guis/4-images/1-loading/plane.gif")
 
         # set window attributes
         self.title("Gui")
-
 
         # add components
         self.add_outer_frame()

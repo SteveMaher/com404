@@ -22,7 +22,7 @@ class Gui(Tk):
         self.add_outer_frame()
         self.add_plant_image_label()
         self.add_heading_label()
-        self.add_flip_button()
+        
 
         # Outer Frame
     def add_outer_frame(self):

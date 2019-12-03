@@ -9,10 +9,10 @@ class Gui(Tk):
         super().__init__()
 
 # load resources
-        self.bus_image = PhotoImage(file="\\bbc-cs.bbc.net\bbcdata\documents\MaherS\Documents\GitHub\com404\0-setup\2-guis\4-images\3-positioning\bus_image.gif")
-        self.map_image = PhotoImage(file="\\bbc-cs.bbc.net\bbcdata\documents\MaherS\Documents\GitHub\com404\0-setup\2-guis\4-images\3-positioning\map_image.gif")
-# self.bus_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4-images/3-positioning/bus_image.gif")
-# self.map_image = PhotoImage(file="//pclures04/home/4mahes86/Documents/Problem Solving Programming/Problem Solving/com404/0-setup/3-Interfaces/2-guis/4-images/3-positioning/map_image.gif")
+        #self.bus_image = PhotoImage(file="\\bbc-cs.bbc.net\bbcdata\documents\MaherS\Documents\GitHub\com404\0-setup\2-guis\4-images\3-positioning\bus_image.gif")
+        #self.map_image = PhotoImage(file="\\bbc-cs.bbc.net\bbcdata\documents\MaherS\Documents\GitHub\com404\0-setup\2-guis\4-images\3-positioning\map_image.gif")
+        self.bus_image = PhotoImage(file="U:/Documents/Problem Solving Programming/com404/0-setup/2-guis/4-images/3-positioning/bus_image.gif")
+        self.map_image = PhotoImage(file="U:/Documents/Problem Solving Programming/com404/0-setup/2-guis/4-images/3-positioning/map_image.gif")
 
 # set window attributes
         self.title("Gui")
@@ -53,9 +53,9 @@ class Gui(Tk):
         self.bus_image_label.bind("<B1-Motion>", self.__bus_move)
 
     def __bus_move(self, event):
-        messagebox.showinfo("Bus Journey Gui", "Mouse x is " + str(event.x))
-        messagebox.showinfo("Bus Journey Gui", "Mouse y is " + str(event.y))
-        #self.bus_image_label.place(x=event.x, y=event.y)
+        #messagebox.showinfo("Bus Journey Gui", "Mouse x is " + str(event.x))
+        #messagebox.showinfo("Bus Journey Gui", "Mouse y is " + str(event.y))
+        self.bus_image_label.place(x=event.x, y=event.y)
 
 # Create an object of the Gui class when this module is executed
 if (__name__ == "__main__"):
