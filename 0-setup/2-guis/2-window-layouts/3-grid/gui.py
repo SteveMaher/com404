@@ -57,8 +57,7 @@ class Gui(Tk):
         self.email_entry.configure(width=40)
 
 
-# button
-
+    # button
     def add_subscribe_button(self):
         # create
         self.subscribe_button = Button(self.outer_frame)
