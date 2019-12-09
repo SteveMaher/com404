@@ -11,7 +11,11 @@ class Gui(Tk):
         self.default_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Grey.gif")
         self.empty_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Frown.gif")     
         self.filled_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Smile.gif")
-        
+        self.weekly_image = PhotoImage(file"//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Weekly.gif")
+        self.monthly_image = PhotoImage(file"//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Monthly.gif")
+        self.yearly_image = PhotoImage(file"//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Yearly.gif")
+
+  
         # set window properties
         self.title("Newsletter")
         self.configure(bg="#ccc", height= 220, width=360, padx=10, pady=10)
@@ -28,8 +32,16 @@ class Gui(Tk):
         self.__add_type_optionmenu()
         self.__add_subscribe_button()
         # add animation button
-        # add animation frame
+        self.__add_animation_button()
+        self.__add_animation_frame()
 
+        # set animation attributes
+        self.image_x_pos = 6
+        self.image_y_pos = 120
+        self.image_x_change = 1
+        self.image_y_change = -1
+
+    # set outer frame
     def __add_outer_frame(self):
         self.outer_frame = Frame()
         self.outer_frame.grid(row=0, column=0)
@@ -86,12 +98,12 @@ class Gui(Tk):
 
     # Optionmenu
     def __add_type_optionmenu(self):
-        choices = {'Yearly', 'Monthly', 'Weekly'}
+        OPTIONS = ['Yearly', 'Monthly', 'Weekly']
         self.SelectionVar = StringVar()
         self.SelectionVar.set("Weekly")
-        self.type_optionmenu = OptionMenu(self.outer_frame, self.SelectionVar, *choices)
+        self.type_optionmenu = OptionMenu(self.outer_frame, self.SelectionVar, *OPTIONS)
         self.type_optionmenu.grid(row=3, column=0, sticky=E)
-        self.type_optionmenu.configure(textvariable=self.SelectionVar, width=25, justify=CENTER, relief=RAISED, padx=10)
+        self.type_optionmenu.configure(textvariable=self.SelectionVar, justify=CENTER, width=25 ,relief=RAISED, padx=10)
 
     # Add button to window outside the outer frame
     def __add_subscribe_button(self):
@@ -100,6 +112,9 @@ class Gui(Tk):
         self.subscribe_button.configure(bg="#fcc", text="Subscribe")
         self.subscribe_button.bind("<ButtonRelease-1>", self.__subscribe_button_clicked)
 
+
+
+    # messagebox.showinfo("Newsletter", "Subscribed!")
     def __subscribe_button_clicked(self, event):
         response = self.email_entry.get()
         selection = self.SelectionVar.get()
@@ -112,12 +127,54 @@ class Gui(Tk):
         else:
             messagebox.showinfo("Newsletter", "You have subscribed to the Yearly newsletter!  You will receive this at the start of each year.")
 
-        # messagebox.showinfo("Newsletter", "Subscribed!")
+        
+
+    # Animation Frame
+    def __add_animation_frame(self):
+        self.animation_frame = Frame()
+        self.animation_frame.grid(row=6, column=0) 
+        self.animation_frame.configure(bg="#90EE90", height=360, width=360, padx=10, pady=10)
+
+    def __toggle_text(self):
+        if self.animation_button["text"] == "Start Animation":
+            # switch to Stop
+            self.animation_button["text"] = "Stop Animation"
+        else:
+            # reset to Start
+            self.animation_button["text"] = "Start Animation"
+            self.image_x_change = 0 
+            self.image_y_change = 0 
+
+    def __animation_button_clicked(self, event):
+        animation = self.__animation_button_clicked
+        selection = self.SelectionVar.get()
+        self.type_image_label = Label(self.animation_frame)
+        self.type_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+        if animation != "" and selection == "Weekly":
+            self.type_image_label.configure(image=self.weekly_image)
+        elif animation != "" and selection == "Monthly":
+            self.type_image_label.configure(image=self.monthly_image)
+        elif animation != "" and selection == "Yearly":
+            self.type_image_label.configure(image=self.yearly_image)
+        self.tick()
+
+# the timer tick function    
+    def tick(self):
+        if self.image_x_pos > 280:
+            self.image_x_change = -2
+        if self.image_y_pos > 300:
+            self.image_y_change = -2
+        if self.image_x_pos < 6:
+            self.image_x_change = 2       
+        if self.image_y_pos < 6:
+            self.image_y_change = 2    
+
+        self.image_x_pos = self.image_x_pos + self.image_x_change
+        self.image_y_pos = self.image_y_pos + self.image_y_change
+        self.type_image_label.place(x=self.image_x_pos, y=self.image_y_pos)
+        self.after(75, self.tick)
 
 
 if (__name__ == "__main__"):
     gui = Gui()
     gui.mainloop()
-
-
-
