@@ -84,7 +84,7 @@ class Gui(Tk):
         self.type_label.configure(text="Type", padx=30, pady=10)
 
 
-    # Optionmenu or try Combobox??
+    # Optionmenu
     def __add_type_optionmenu(self):
         choices = {'Yearly', 'Monthly', 'Weekly'}
         self.SelectionVar = StringVar()
