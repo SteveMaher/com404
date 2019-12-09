@@ -11,9 +11,9 @@ class Gui(Tk):
         self.default_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Grey.gif")
         self.empty_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Frown.gif")     
         self.filled_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Smile.gif")
-        self.weekly_image = PhotoImage(file"//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Weekly.gif")
-        self.monthly_image = PhotoImage(file"//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Monthly.gif")
-        self.yearly_image = PhotoImage(file"//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Yearly.gif")
+        self.weekly_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Weekly.gif")
+        self.monthly_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Monthly.gif")
+        self.yearly_image = PhotoImage(file="//bbc-cs.bbc.net/bbcdata/documents/MaherS/Documents/GitHub/com404/0-setup/AE2-Review/TCA-1/Yearly.gif")
 
   
         # set window properties
@@ -31,7 +31,6 @@ class Gui(Tk):
         self.__add_type_label()
         self.__add_type_optionmenu()
         self.__add_subscribe_button()
-        # add animation button
         self.__add_animation_button()
         self.__add_animation_frame()
 
@@ -108,11 +107,9 @@ class Gui(Tk):
     # Add button to window outside the outer frame
     def __add_subscribe_button(self):
         self.subscribe_button = Button()
-        self.subscribe_button.grid(row=3, column=0, columnspan=2, sticky=N+S+E+W)
+        self.subscribe_button.grid(row=4, column=0, columnspan=2, sticky=N+S+E+W)
         self.subscribe_button.configure(bg="#fcc", text="Subscribe")
         self.subscribe_button.bind("<ButtonRelease-1>", self.__subscribe_button_clicked)
-
-
 
     # messagebox.showinfo("Newsletter", "Subscribed!")
     def __subscribe_button_clicked(self, event):
@@ -127,7 +124,14 @@ class Gui(Tk):
         else:
             messagebox.showinfo("Newsletter", "You have subscribed to the Yearly newsletter!  You will receive this at the start of each year.")
 
-        
+    def __add_animation_button(self):
+        #self.buttontext = StringVar()
+        #self.buttontext.set("Start Animation")
+        self.animation_button = Button()
+        self.animation_button.grid(row=5, column=0, columnspan=2, sticky=N+E+S+W)
+        self.animation_button.configure(bg="#fcc", text="Start Animation", command=self.__toggle_text) 
+        self.animation_button.bind("<Button-1>", self.__animation_button_clicked)
+
 
     # Animation Frame
     def __add_animation_frame(self):
@@ -160,14 +164,14 @@ class Gui(Tk):
 
 # the timer tick function    
     def tick(self):
-        if self.image_x_pos > 280:
-            self.image_x_change = -2
+        if self.image_x_pos > 260:
+            self.image_x_change = -4
         if self.image_y_pos > 300:
-            self.image_y_change = -2
+            self.image_y_change = -4
         if self.image_x_pos < 6:
-            self.image_x_change = 2       
+            self.image_x_change = 4       
         if self.image_y_pos < 6:
-            self.image_y_change = 2    
+            self.image_y_change = 4    
 
         self.image_x_pos = self.image_x_pos + self.image_x_change
         self.image_y_pos = self.image_y_pos + self.image_y_change
