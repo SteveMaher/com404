@@ -20,9 +20,7 @@ class Gui(Tk):
         self.add_email_entry()
         self.add_subscribe_button()
 
-
     # Grid - this is the outer frame
-
     def add_outer_frame(self):
         # create
         self.outer_frame = Frame()
@@ -30,14 +28,11 @@ class Gui(Tk):
         self.outer_frame.configure(bg="#eee", padx=10, pady=10)
 
     # Pack - this is the inner frame
-
     def add_email_frame(self):
         self.email_frame = Frame(self.outer_frame)
         self.email_frame.grid(row=2, column=0)
 
-
     # Grid - these are going in the outer frame
-
     def add_heading_label(self):
         # create
         self.heading_label = Label(self.outer_frame)
@@ -54,7 +49,6 @@ class Gui(Tk):
 
 
     # Pack - These two are going in the inner frame 
-
     def add_emailtext_label(self):
         self.emailtext_label = Label(self.email_frame)
         self.emailtext_label.pack(side=LEFT)
@@ -70,7 +64,6 @@ class Gui(Tk):
 
 
     # button - This is going in the inner frame
-
     def add_subscribe_button(self):
         # create
         self.subscribe_button = Button(self.outer_frame)
